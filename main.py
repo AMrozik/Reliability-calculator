@@ -1,5 +1,6 @@
 import zadanie1 as z1
 import zadanie2 as z2
+import zadanie3 as z3
 
 
 while True:
@@ -11,8 +12,8 @@ while True:
         z1.exercise()
     elif console_in == "2":
         z2.exercise()
-    # elif console_in == "3":
-    #     exercise3()
+    elif console_in == "3":
+        z3.exercise()
     # elif console_in == "4":
     #     exercise4()
     # elif console_in == "5":

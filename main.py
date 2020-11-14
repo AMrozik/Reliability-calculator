@@ -1,4 +1,5 @@
 import zadanie1 as z1
+import zadanie2 as z2
 
 
 while True:
@@ -8,8 +9,8 @@ while True:
     if console_in == "1":
         # zadanie 2 w pliku pfd
         z1.exercise()
-    # elif console_in == "2":
-    #     exercise2()
+    elif console_in == "2":
+        z2.exercise()
     # elif console_in == "3":
     #     exercise3()
     # elif console_in == "4":

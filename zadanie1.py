@@ -1,16 +1,9 @@
-import matplotlib.pyplot as plt
+#!/usr/bin/python3
 
+"""
+zadanie1.py: Rozwiązuje zadanie 2 z pliku reliability.pdf.
 
-def reliability(number_of_survivors, number_of_items):
-    return number_of_survivors/number_of_items
-
-
-def failure_rate(failures, survivors, time_interval):
-    return failures/(survivors * time_interval)
-
-
-def exercise():
-    """One thousand transistors are placed on life test, and the number of failures in each time interval are recorded.
+One thousand transistors are placed on life test, and the number of failures in each time interval are recorded.
     Find the reliability and the failure rate at 0, 100, 200, etc hours.
     (You may find it helpful to set this up on a spreadsheet.)
     Time interval   Number of failures\n
@@ -26,7 +19,32 @@ def exercise():
     900-1000        36\n
     Draw a graph to show the change in the failure rate as the transistors get older.
     Do you think this component shows the bath tub pattern of failure?
-    Draw a graph to show how the reliability changes over time."""
+    Draw a graph to show how the reliability changes over time.
+"""
+
+__author__ = "Kamil Skrzypkowski, Andrzej Mrozik"
+__credits__ = ["Paweł Czapiewski"]
+__version__ = "1.0.1"
+__maintainer__ = "Andrzej Mrozik"
+__email__ = "andrzej.mrozik98@gmail.com"
+__status__ = "Production"
+
+
+import matplotlib.pyplot as plt
+
+
+def reliability(number_of_survivors, number_of_items):
+    if number_of_items != 0:
+        return number_of_survivors/number_of_items
+
+
+def failure_rate(failures, survivors, time_interval):
+    if survivors * time_interval != 0:
+        return failures/(survivors * time_interval)
+
+
+def exercise():
+    """"""
 
     transistors_amount = 1000
     time_failures_tab = [0, 100, 160], [100, 200, 86], [200, 300, 78], [300, 400, 70], [400, 500, 64], [500, 600, 58], [600, 700, 52], [700, 800, 43], [800, 900, 42], [900, 1000, 36]

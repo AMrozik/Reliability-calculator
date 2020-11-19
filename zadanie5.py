@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-zadanie3.py: Rozwiązuje zadanie 4 z pliku reliability.pdf.
+zadanie5.py: Rozwiązuje zadanie 6 z pliku reliability.pdf.
 
 Suppose that a component we wish to model has a constant failure rate with a mean time
 between failures of 25 hours? Find:-

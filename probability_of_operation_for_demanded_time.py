@@ -19,16 +19,16 @@ from math import exp
 
 
 def load_data():
-    """Pobiera dane od użytkownika z konsoli
+    """Pobiera dane od użytkownika z konsoli\n
         - Jeśli udało się sparsować dane do liczby rzeczywistej:
             zwraca krotkę (MTBF, demanded_time_without_failure)
         - Jeśli nie udało się sparsować danych:
             zwraca None
     """
     try:
-        MTBF = float(input("Podaj MTBF:"))
+        MTBF = float(input("Podaj MTBF: "))
         demanded_time_without_failure = float(input("Podaj żądany czas w godzinach "
-                                                    "w jakim urządzenie ma działać bez usterek:"))
+                                                    "w jakim urządzenie ma działać bez usterek: "))
         return MTBF, demanded_time_without_failure
     except ValueError:
         return None

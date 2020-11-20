@@ -14,7 +14,7 @@ import find_reliability_and_failure_rate_in_time_interval as z1
 import reliability_after_certain_time as z2
 import failure_rate_after_certain_hours as z3
 import probability_of_operation_for_demanded_time as z4
-import zadanie5 as z5
+import draw_plot_and_find_reliability_at_certain_time as z5
 
 
 if __name__ == '__main__':
@@ -29,33 +29,33 @@ if __name__ == '__main__':
 
         if console_in == "1":
             # zadanie 2 z pliku reliability.pdf
-            if z1.solve() == None:
-                print("Input error")
-            input("Wciśnij Enter klawisz aby kontynuować")
+            if z1.solve() is None:
+                print("Niepoprawne dane")
+            input("Wciśnij klawisz Enter, aby kontynuować.")
             print()
         elif console_in == "2":
             # zadanie 3 z pliku reliability.pdf
-            if z2.solve() == None:
-                print("Input error")
-            input("Wciśnij Enter klawisz aby kontynuować")
+            if z2.solve() is None:
+                print("Niepoprawne dane")
+            input("Wciśnij klawisz Enter, aby kontynuować.")
             print()
         elif console_in == "3":
             # zadanie 4 z pliku reliability.pdf
-            if z3.solve() == None:
-                print("Input error")
-            input("Wciśnij Enter klawisz aby kontynuować")
+            if z3.solve() is None:
+                print("Niepoprawne dane")
+            input("Wciśnij klawisz Enter, aby kontynuować.")
             print()
         elif console_in == "4":
             # zadanie 5 z pliku reliability.pdf
-            if z4.solve() == None:
-                print("Input error")
-            input("Wciśnij Enter klawisz aby kontynuować")
+            if z4.solve() is None:
+                print("Niepoprawne dane")
+            input("Wciśnij klawisz Enter, aby kontynuować.")
             print()
         elif console_in == "5":
             # zadanie 6 z pliku reliability.pdf
-            if z5.solve() == None:
-                print("Input error")
-            input("Wciśnij Enter klawisz aby kontynuować")
+            if z5.solve() is None:
+                print("Niepoprawne dane")
+            input("Wciśnij klawisz Enter, aby kontynuować.")
             print()
         # exits program loop
         elif console_in == "exit":

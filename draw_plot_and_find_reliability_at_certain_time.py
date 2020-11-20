@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-find_reliability_after_certain_time.py: Rozwiązuje zadanie 6 z pliku reliability.pdf.
+draw_plot_and_find_reliability_at_certain_time.py: Rozwiązuje zadanie 6 z pliku reliability.pdf.
 
 Suppose that a component we wish to model has a constant failure rate with a mean time
 between failures of 25 hours? Find:-
@@ -18,6 +18,7 @@ __status__ = "Production"
 
 
 from math import exp
+import matplotlib.pyplot as plt
 
 
 def load_data():
@@ -35,17 +36,34 @@ def load_data():
         return None
 
 
+def reliability_function(failure_rate, time):
+    """Funkcja reliability
+    przyjmuje failure rate oraz czas
+    zwraca wartość realibility dla podanych argumentów"""
+    return exp(-time * failure_rate)
+
+
 def solve():
     """Pobiera dane używając load_data().
-     Mając MTBF oblicza reliability, dla urzadzenia po okreslonej ilosci godzin
+     Mając MTBF wyrysowuje funkcje reliability,
+     następnie oblicza reliability, dla urzadzenia po okreslonej ilosci godzin
      Zwraca wynik jako liczbę rzeczywistą
      Jeśli napotkano błąd zwraca None"""
 
     try:
         MTBF, time_without_failure = load_data()
         failure_rate = 1/MTBF
-        result = exp(-time_without_failure * failure_rate)
-        print(f"failure rate: {round(result, 4)}")
+        x = list(range(int(MTBF)))
+        y = []
+        for value in x:
+            y.append(reliability_function(failure_rate, value))
+        plt.plot(x, y)
+        plt.xlabel("time")
+        plt.ylabel("reliability")
+        plt.show()
+        result = reliability_function(failure_rate, time_without_failure)
+        print(f"reliability elementu o MTBF równym {MTBF},"
+              f" po upływie {time_without_failure} wynosi: {round(result, 4)}")
         return result
-    except TypeError:
+    except TypeError and ZeroDivisionError and MemoryError:
         return None

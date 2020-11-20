@@ -49,7 +49,8 @@ def solve():
     if MTBF != 0:
         failure_rate = 1/MTBF
         R = exp(-time_without_failure * failure_rate)
-        print("failure rate:", round(R, 2))
+        print(f"Prawdopodobieństwo że sprzęt będzie działał przez"
+              f" {time_without_failure}h przy MTBF równym {MTBF}h, wynosi: {round(R, 2)}")
         return R
     else:
         return None

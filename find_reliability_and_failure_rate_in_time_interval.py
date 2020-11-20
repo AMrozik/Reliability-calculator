@@ -33,6 +33,8 @@ __status__ = "Production"
 import matplotlib.pyplot as plt
 
 
+# jak dam zero to dostaje jakieś useless wykresy
+
 def reliability(number_of_survivors, number_of_items):
     """Zwraca wyliczone reliability.\n
     - number_of_survivors - ilosc obiektow ktora przetrwala
@@ -65,7 +67,7 @@ def load_data():
     try:
         transistors_amount = int(input("Podaj ilosc tranzystorow: "))
 
-    except ValueError:
+    except ValueError and TypeError:
         print("Blad podanej wartosci tranzystorow")
         return None
 
@@ -87,27 +89,31 @@ def solve():
     """
     try:
         transistors_amount, time_failures_tab = load_data()
-    except TypeError:
-        return None
 
     # failed_amount holds number of already dead transistors and failure_rates_time is for displaying plots
-    failed_amount = 0
-    failure_rates = []
-    failure_rates_time = []
-    reliability_time = []
-    for time_start, time_end, failures in time_failures_tab:
-        failed_amount += int(failures)
-        failure_rates.append([failure_rate(int(failures), transistors_amount - failed_amount, int(time_end) - int(time_start))])
-        failure_rates_time.append(int(time_end))
-        reliability_time.append(reliability(transistors_amount - failed_amount, transistors_amount))
 
-    plt.plot(failure_rates_time, failure_rates)
-    plt.xlabel("time")
-    plt.ylabel("failure rates")
-    plt.show()
+    # jak w pliku jest float to wybuchnie
 
-    plt.plot(failure_rates_time, reliability_time)
-    plt.xlabel("time")
-    plt.ylabel("reliability")
-    plt.show()
-    return reliability_time, failure_rates, failure_rates_time
+        failed_amount = 0
+        failure_rates = []
+        failure_rates_time = []
+        reliability_time = []
+        for time_start, time_end, failures in time_failures_tab:
+            failed_amount += int(failures)
+            failure_rates.append([failure_rate(int(failures), transistors_amount - failed_amount, float(time_end) - float(time_start))])
+            failure_rates_time.append(float(time_end))
+            reliability_time.append(reliability(transistors_amount - failed_amount, transistors_amount))
+
+        plt.plot(failure_rates_time, failure_rates)
+        plt.xlabel("time")
+        plt.ylabel("failure rates")
+        plt.show()
+
+        plt.plot(failure_rates_time, reliability_time)
+        plt.xlabel("time")
+        plt.ylabel("reliability")
+        plt.show()
+        return reliability_time, failure_rates, failure_rates_time
+
+    except TypeError and ValueError:
+        return None

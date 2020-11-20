@@ -27,7 +27,7 @@ def load_data():
     """
     try:
         reliability = float(input("Podaj failure rate: "))
-        time = int(input("Podaj żądany czas w godzinach dla ktorego chcesz sprawdzic reliability: "))
+        time = float(input("Podaj żądany czas w godzinach dla ktorego chcesz sprawdzic reliability: "))
         return reliability, time
     except ValueError:
         return None

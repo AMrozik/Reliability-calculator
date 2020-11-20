@@ -25,9 +25,9 @@ def load_data():
     """
     try:
         reliability = float(input("Podaj reliability: "))
-        time = int(input("Podaj żądany czas w godzinach dla ktorego chcesz sprawdzic reliability: "))
+        time = float(input("Podaj żądany czas w godzinach dla ktorego chcesz sprawdzic reliability: "))
         return reliability, time
-    except ValueError:
+    except ValueError and TypeError:
         return None
 
 
@@ -42,5 +42,5 @@ def solve():
         result = (log(reliability)/time) * -1
         print("Najwiekszy failure rate jest po okreslonym czasie jest rowny: ", result)
         return result
-    except TypeError:
+    except ZeroDivisionError and ValueError:
         return None

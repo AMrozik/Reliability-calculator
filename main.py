@@ -20,11 +20,13 @@ import draw_plot_and_find_reliability_at_certain_time as z5
 if __name__ == '__main__':
     while True:
         print("Podaj numer zadania (aby wyjsc wpisz 'exit')\n"
-              "1: zadanie 2 z pliku reliability.pdf\n"
-              "2: zadanie 3 z pliku reliability.pdf\n"
-              "3: zadanie 4 z pliku reliability.pdf\n"
-              "4: zadanie 5 z pliku reliability.pdf\n"
-              "5: zadanie 6 z pliku reliability.pdf")
+              "1: Liczenie reliability i falure rate w przedziale czasowym\n"
+              "2: Liczenie reliability po okreslonym czasie\n"
+              "3: Liczenie falure rate po okreslonym czasie\n"
+              "4: oblicz prawdopodobieństwo, że urządzenie będzie działało bez przeszkód przez zadaną liczbę godzin "
+              "mając MTBF.pdf\n"
+              "5: Mając MTBF wyrysowuj funkcje reliability, następnie oblicz reliability, dla urzadzenia po "
+              "okreslonej ilosci godzin.pdf")
         console_in = input(">")
 
         if console_in == "1":

@@ -32,7 +32,7 @@ def load_data():
         MTBF = float(input("Podaj MTBF: "))
         time_without_failure = float(input("Podaj żądany czas dla ktorego chcesz wyliczyc reliability: "))
         return MTBF, time_without_failure
-    except ValueError:
+    except ValueError and TypeError:
         return None
 
 
@@ -65,5 +65,5 @@ def solve():
         print(f"reliability elementu o MTBF równym {MTBF},"
               f" po upływie {time_without_failure} wynosi: {round(result, 4)}")
         return result
-    except TypeError and ZeroDivisionError and MemoryError:
+    except TypeError and ZeroDivisionError and MemoryError and ValueError:
         return None

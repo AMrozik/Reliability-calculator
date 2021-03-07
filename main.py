@@ -27,7 +27,7 @@ if __name__ == '__main__':
               "4: oblicz prawdopodobieństwo, że urządzenie będzie działało bez przeszkód przez zadaną liczbę godzin "
               "mając MTBF\n"
               "5: Mając MTBF wyrysowuj funkcje reliability, następnie oblicz reliability, dla urzadzenia po "
-              "okreslonej ilosci godzin")
+              "okreslonej ilości godzin")
         console_in = input(">")
 
         if console_in == "1":

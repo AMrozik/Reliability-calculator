@@ -10,6 +10,7 @@ __maintainer__ = "Andrzej Mrozik"
 __email__ = "andrzej.mrozik98@gmail.com"
 __status__ = "Production"
 
+
 import find_reliability_and_failure_rate_in_time_interval as z1
 import reliability_after_certain_time as z2
 import failure_rate_after_certain_hours as z3
@@ -24,9 +25,9 @@ if __name__ == '__main__':
               "2: Liczenie reliability po okreslonym czasie\n"
               "3: Liczenie falure rate po okreslonym czasie\n"
               "4: oblicz prawdopodobieństwo, że urządzenie będzie działało bez przeszkód przez zadaną liczbę godzin "
-              "mając MTBF.pdf\n"
+              "mając MTBF\n"
               "5: Mając MTBF wyrysowuj funkcje reliability, następnie oblicz reliability, dla urzadzenia po "
-              "okreslonej ilosci godzin.pdf")
+              "okreslonej ilosci godzin")
         console_in = input(">")
 
         if console_in == "1":

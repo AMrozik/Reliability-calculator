@@ -30,7 +30,7 @@ def load_data():
     """
     try:
         MTBF = float(input("Podaj MTBF: "))
-        time_without_failure = float(input("Podaj żądany czas dla ktorego chcesz wyliczyc reliability: "))
+        time_without_failure = float(input("Podaj żądany czas dla którego chcesz wyliczyc reliability: "))
         return MTBF, time_without_failure
     except ValueError and TypeError:
         return None
